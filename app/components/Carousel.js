@@ -1,6 +1,7 @@
 "use client"
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import onepiece from "@/public/covers/onepiece.jpg"
 import naruto from "@/public/covers/naruto.jpg"
 import dragonball from "@/public/covers/dragonball.jpg"
@@ -80,13 +81,13 @@ const Card = () => {
         style={{ transform: `translateX(-${index * 100}%)` }}
         >
         {list.map((item, i) => (
-          <div key={i} className="relative w-full flex-shrink-0">
+          <Link href={`/${item.name.replace(" ", "-")}`} key={i} className="relative w-full flex-shrink-0">
           <Image
             src={item.img}
             alt={`Slide ${i}`}
             className="w-full h-auto"
           />
-          <span className="absolute bottom-16 text-5xl font-serif left-6 text-amber-500 bg-stone-50">
+          <span className="absolute bottom-16 md:text-5xl font-serif left-6 text-amber-500 bg-stone-50">
             {item.name}
           </span>
           <span className="absolute bottom-6 left-6 text-gray-600 bg-white">
@@ -94,8 +95,8 @@ const Card = () => {
           </span>
           <span className="absolute top-4 left-6 text-amber-100 font-serif font-bold bg-slate-700 p-4">
             Trending Right Now
-          </span>
-        </div>
+          </span> 
+        </Link>
         ))}
       </div>
       <button
