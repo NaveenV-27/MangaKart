@@ -53,7 +53,7 @@ const Card = () => {
 
   // setInterval(()=>{
   //   nextSlide()
-  // }, 3000)
+  // }, 7000)
 
   const handleSelect = async (selectedIndex, e) => {
     slideRefs.current[index].style.background = "rgb(148,163,184)";

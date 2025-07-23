@@ -19,25 +19,26 @@ const MangaList = () => {
 
   useEffect(() => {
     getData()
+    
   }, [])
   return (
     <div className="grid md:grid-cols-3 px-20 w-full gap-4 m-4">
       {data.map((item, i) => (
         <Link
-          href={`/${item.name.replaceAll(" ", "-")}`}
+          href={`/${item.title.replaceAll(" ", "-")}`}
           className="relative bg-black flex-center h-80 rounded-lg overflow-hidden group"
           key={i}
         >
-          <img src={item.img} alt="Cover" className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
+          <img src={item.cover_image_url} alt="Cover" className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110" />
           
           <div className="absolute inset-0 bg-black bg-opacity-40 transition-opacity duration-300 group-hover:bg-opacity-60"></div>
 
           <span className="absolute bottom-12 left-4 bg-black bg-opacity-70 text-white font-bold text-lg px-3 py-1 rounded-md shadow-lg">
-            {item.name}
+            {item.title}
           </span>
 
           <span className="absolute bottom-4 left-4 bg-black bg-opacity-70 text-white text-sm px-3 py-1 rounded-md shadow-md">
-            {item.count} chapters
+            {item.chapter_count} chapters
           </span>
         </Link>
       ))}

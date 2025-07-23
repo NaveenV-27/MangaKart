@@ -14,7 +14,7 @@ export default function Home() {
     <div className="min-h-[89.7vh] text-3xl flex-center flex-col bg-gradient-to-r from-slate-900 to-slate-700">
 
       <Carousel />
-      <div className="w-full p-4 font-semibold font-serif">
+      <div className="w-full p-4 font-semibold font-serif px-20">
         Checkout the Latest releases
       </div>
       <MangaList/>
